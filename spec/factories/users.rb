@@ -9,5 +9,9 @@ FactoryGirl.define do
     factory :authenticated_user do
       state :enabled
     end
+
+    factory :requested_user do
+      confirmation_token { generate :confirmation_token }
+    end
   end
 end

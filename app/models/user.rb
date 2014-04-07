@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   end
 
   def confirm
-    confirmation_token = nil
+    self.confirmation_token = nil
     enable
   end
 

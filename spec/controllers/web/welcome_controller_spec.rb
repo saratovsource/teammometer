@@ -8,7 +8,7 @@ describe Web::WelcomeController do
         get :index
         expect(response).to be_success
         user = assigns(:current_user)
-        expect(controller.signed_in?).to be false
+        expect(signed_in?).to be false
       end
     end
 
@@ -18,7 +18,7 @@ describe Web::WelcomeController do
         get :index
         expect(response).to be_success
         user = assigns(:current_user)
-        expect(controller.signed_in?).to be true
+        expect(signed_in?).to be true
       end
     end
   end
