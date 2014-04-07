@@ -10,6 +10,8 @@ GEM
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
+    active_model_serializers (0.8.1)
+      activemodel (>= 3.0)
     activemodel (4.0.4)
       activesupport (= 4.0.4)
       builder (~> 3.1.0)
@@ -28,6 +30,7 @@ GEM
     addressable (2.3.6)
     arel (4.0.2)
     awesome_print (1.2.0)
+    bcrypt-ruby (3.1.2)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -77,6 +80,7 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
+    ffaker (1.24.0)
     ffi (1.9.3)
     figaro (0.7.0)
       bundler (~> 1.0)
@@ -246,6 +250,7 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     sqlite3 (1.3.9)
+    state_machine (1.2.0)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
@@ -267,6 +272,9 @@ GEM
     unicorn-rails (1.1.0)
       rack
       unicorn
+    validates (0.0.8)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
     yard (0.8.7.4)
@@ -275,6 +283,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
+  bcrypt-ruby
   better_errors
   binding_of_caller
   bootstrap-sass
@@ -283,6 +293,7 @@ DEPENDENCIES
   database_cleaner (= 1.0.1)
   email_spec
   factory_girl_rails
+  ffaker
   figaro
   guard-bundler
   guard-rails
@@ -302,7 +313,9 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   simple_form
   sqlite3
+  state_machine
   therubyracer
   uglifier (>= 1.3.0)
   unicorn
   unicorn-rails
+  validates

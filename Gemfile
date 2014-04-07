@@ -10,10 +10,16 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'figaro'
 gem 'haml-rails'
+gem 'state_machine'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'unicorn'
 gem 'unicorn-rails'
+# Build JSON APIs with ease.
+gem 'active_model_serializers'
+gem 'validates'
+# Use ActiveModel has_secure_password
+gem 'bcrypt-ruby'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :mri_21, :rbx]
@@ -30,6 +36,7 @@ end
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'ffaker'
   gem 'jazz_hands'
 end
 group :test do
