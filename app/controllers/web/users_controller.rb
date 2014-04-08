@@ -9,6 +9,7 @@ class Web::UsersController < Web::ApplicationController
     @user.assign_attributes(params.fetch(:user, {}))
     @user.generate_confirmation_token!
     if @user.save
+      UserMailer.confirmation_instructions(@user).deliver
       flash!(:success)
     else
       flash_now!(:error)
@@ -19,7 +20,6 @@ class Web::UsersController < Web::ApplicationController
   def confirm
     @user = User.disabled.where(confirmation_token: params[:id]).first
     if @user && @user.confirm
-      UserMailer.confirmation_instructions(@user).deliver
       flash!(:success)
       sign_in(@user)
     else

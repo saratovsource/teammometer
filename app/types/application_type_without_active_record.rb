@@ -3,15 +3,12 @@ module ApplicationTypeWithoutActiveRecord
 
   included do
     include Virtus.model
-
-    include ActiveModel::Validations
-    include ActiveModel::Conversion
-    include ActiveModel::Translation
+    include ActiveModel::Model
   end
 
   module ClassMethods
     def _args
-      attributes_set.map(&:name)
+      attribute_set.to_a.map(&:name)
     end
   end
 

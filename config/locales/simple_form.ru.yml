@@ -4,6 +4,8 @@ ru:
     submit:
       user:
         create: "Зарегистрироваться"
+      session_type:
+        create: "Войти"
   simple_form:
     "yes": "да"
     "no": "нет"
@@ -16,3 +18,7 @@ ru:
           email: "Email"
           password: "Пароль"
           password_confirmation: "Подтвердите пароль"
+    placeholders:
+      session_type:
+        email: "Email"
+        password: "Пароль"

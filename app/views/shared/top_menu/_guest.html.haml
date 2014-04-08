@@ -1,0 +1,9 @@
+%ul.nav.navbar-nav
+  %li
+    = simple_form_for SessionType.new(params[:session_type]), url: session_path, html: {class: "navbar-form navbar-left"} do |f|
+      - f.with_options label: false do |ff|
+        = ff.input :email
+        = ff.input :password
+      = f.submit class: "btn btn-default"
+      = t('.or')
+      = link_to t('.sign_up'), new_user_path, class: "btn btn-default"

@@ -1,6 +1,10 @@
 module AuthHelpers
   def sign_in_as_user
     user = create :authenticated_user
+    sign_in(user)
+  end
+
+  def sign_in(user)
     controller.sign_in user
   end
 

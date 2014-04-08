@@ -1,0 +1,10 @@
+---
+ru:
+  shared:
+    top_menu:
+      user:
+        realy: Вы уже уходите?
+        sign_out: Выйти
+      guest:
+        sign_up: Зарегистрироваться
+        or: или
