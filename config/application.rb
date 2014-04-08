@@ -29,5 +29,12 @@ module TeamMometer
     config.i18n.fallbacks = true
     I18n.enforce_available_locales = true
     config.i18n.available_locales = %w[ru]
+
+    config.action_mailer.default_options = {
+      from: "support.temmometer.io"
+    }
+    config.action_mailer.default_url_options = {
+      host: ENV["HOST"]
+    }
   end
 end

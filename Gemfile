@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 # ruby '2.1.0'
 gem 'rails', '4.0.4'
 gem 'rails-observers'
-gem 'mail_view'
 gem 'virtus'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
@@ -41,6 +40,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'ffaker'
+  gem 'mail_view'
   gem 'jazz_hands'
 end
 group :test do

@@ -1,4 +1,5 @@
 TeamMometer::Application.routes.draw do
+  mount UserMailView => 'user_mail_view' if Rails.env.development?
   scope module: :web do
     root to: "welcome#index"
     resources :users, only: [:new, :create] do

@@ -19,6 +19,7 @@ class Web::UsersController < Web::ApplicationController
   def confirm
     @user = User.disabled.where(confirmation_token: params[:id]).first
     if @user && @user.confirm
+      UserMailer.confirmation_instructions(@user).deliver
       flash!(:success)
       sign_in(@user)
     else
