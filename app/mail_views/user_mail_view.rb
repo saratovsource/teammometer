@@ -1,6 +1,6 @@
 class UserMailView < ApplicationMailView
   mail :confirmation_instructions do
-    user = build :requested_user
+    user = User.disabled.last
     generate user
   end
 end
