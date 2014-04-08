@@ -8,6 +8,7 @@ ru:
             email:
               blank: "не может быть пустым"
               email: "неверный формат email"
+              taken: "пользователь с этим email уже зарегистрирован"
             password:
               blank: "не может быть пустым"
             password_confirmation:
