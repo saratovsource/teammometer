@@ -3,3 +3,8 @@ ru:
   flash_messages:
     defaults:
       error: "Ошибка!"
+    web:
+      users:
+        confirm:
+          success: "Ваша регистрация успешно подтверждена!"
+          error: "К сожалению, мы не можем подтвердить Вашу регистрацию!"
