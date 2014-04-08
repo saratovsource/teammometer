@@ -1,0 +1,5 @@
+= simple_form_for @user, html: { class: 'form-vertical' }, wrapper: :vertical_form do |f|
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
+  = f.submit class: "btn btn-lg btn-primary btn-block"

@@ -15,7 +15,7 @@ gem "bootstrap_flash_messages", "~> 1.0.0"
 gem 'figaro'
 gem 'haml-rails'
 gem 'state_machine'
-gem 'simple_form'
+gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'unicorn'
 gem 'unicorn-rails'

@@ -1,0 +1,18 @@
+---
+ru:
+  helpers:
+    submit:
+      user:
+        create: "Зарегистрироваться"
+  simple_form:
+    "yes": "да"
+    "no": "нет"
+    required:
+      text: 'обязательно к заполнению'
+      mark: '*'
+    labels:
+      user:
+        new:
+          email: "Email"
+          password: "Пароль"
+          password_confirmation: "Подтвердите пароль"

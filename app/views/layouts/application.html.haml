@@ -11,5 +11,5 @@
     %header
       = render 'layouts/navigation'
     %main{:role => "main"}
-      = render 'layouts/messages'
+      = flash_messages(:close, :fade)
       = yield

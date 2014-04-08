@@ -1,0 +1,14 @@
+---
+ru:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "не может быть пустым"
+              email: "неверный формат email"
+            password:
+              blank: "не может быть пустым"
+            password_confirmation:
+              confirmation: "не совпадает с паролем"

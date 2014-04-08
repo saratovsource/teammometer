@@ -1,0 +1,5 @@
+---
+ru:
+  flash_messages:
+    defaults:
+      error: "Ошибка!"

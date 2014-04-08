@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/plataformatec/simple_form.git
+  revision: 9158043eabe5bb70fb055e9d9baef8ede0ba9115
+  specs:
+    simple_form (3.0.1)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -251,9 +259,6 @@ GEM
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
     sexp_processor (4.4.3)
-    simple_form (3.0.1)
-      actionpack (>= 4.0.0, < 4.1)
-      activemodel (>= 4.0.0, < 4.1)
     slop (3.5.0)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -334,7 +339,7 @@ DEPENDENCIES
   rb-inotify
   rspec-rails
   sass-rails (~> 4.0.3)
-  simple_form
+  simple_form!
   sqlite3
   state_machine
   therubyracer
