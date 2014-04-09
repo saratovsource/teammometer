@@ -23,6 +23,7 @@ gem 'active_model_serializers'
 gem 'validates'
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby'
+gem 'mail_view'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :mri_21, :rbx]
@@ -40,7 +41,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'ffaker'
-  gem 'mail_view'
   gem 'jazz_hands'
 end
 group :test do
