@@ -13,3 +13,7 @@ ru:
               blank: "не может быть пустым"
             password_confirmation:
               confirmation: "не совпадает с паролем"
+    models:
+      survey:
+        one: Опрос
+        other: Опросы

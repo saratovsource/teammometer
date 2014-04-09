@@ -1,6 +1,8 @@
 ---
 ru:
   shared:
+    sidebar:
+      title: Сайдбар
     top_menu:
       user:
         realy: Вы уже уходите?

@@ -12,9 +12,9 @@
       = render 'layouts/navigation'
     %main{:role => "main"}
       .container
+        = flash_messages(:close, :fade)
         .row
           .col-sm-3.sidebar
-            = flash_messages(:close, :fade)
             = render "shared/sidebar"
           .col-sm-8.main
             = yield
