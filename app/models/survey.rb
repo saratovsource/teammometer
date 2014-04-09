@@ -1,6 +1,7 @@
 class Survey < ActiveRecord::Base
-  validates :title, presence: true
-  belongs_to :interviewer, class_name: "User"
+  validates   :title, presence: true
+  belongs_to  :interviewer, class_name: "User"
+  has_many    :survey_participants
 
   state_machine initial: :disabled do
     state :enabled
