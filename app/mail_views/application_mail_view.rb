@@ -1,5 +1,4 @@
 class ApplicationMailView < MailView
-  include FactoryGirl::Syntax::Methods
 
   class << self
     def mail(method_name, &block)
