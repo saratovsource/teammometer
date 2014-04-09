@@ -9,6 +9,7 @@ TeamMometer::Application.routes.draw do
   # Web
   scope module: :web do
     root to: "welcome#index"
+    get 'templates/*template', to: 'templates#show', as: :template
     resources :surveys
     resource  :session, only: [:create, :destroy]
     resources :users,   only: [:new, :create] do

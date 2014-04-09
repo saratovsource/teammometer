@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20140409200738) do
   enable_extension "plpgsql"
 
   create_table "survey_participants", force: true do |t|
+    t.string   "email"
     t.string   "name"
     t.integer  "survey_id"
     t.datetime "created_at"

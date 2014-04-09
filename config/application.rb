@@ -31,7 +31,7 @@ module TeamMometer
     config.i18n.available_locales = %w[ru]
 
     config.action_mailer.default_options = {
-      from: "support.temmometer.io"
+      from: "support@#{ ENV["HOST"] }"
     }
     config.action_mailer.default_url_options = {
       host: ENV["HOST"]
