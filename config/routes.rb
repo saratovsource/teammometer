@@ -3,7 +3,7 @@ TeamMometer::Application.routes.draw do
 
   # Api
   namespace :api do
-
+    resources :surveys
   end
 
   # Web
