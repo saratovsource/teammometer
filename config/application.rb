@@ -36,5 +36,6 @@ module TeamMometer
     config.action_mailer.default_url_options = {
       host: ENV["HOST"]
     }
+    config.serve_static_assets = true # Heroku only!!!
   end
 end
