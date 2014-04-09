@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :surveys, inverse_of: :interviewer, foreign_key: "interviewer_id"
   validates :email, presence: true, uniqueness: true, email: true
   has_secure_password
 

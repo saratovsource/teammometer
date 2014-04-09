@@ -6,7 +6,7 @@ FactoryGirl.define do
     password { generate :string }
     password_confirmation { password }
 
-    factory :authenticated_user do
+    factory :authenticated_user, aliases: [:interviewer] do
       state :enabled
     end
 
