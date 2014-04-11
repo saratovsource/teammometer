@@ -1,3 +1,4 @@
 %h3= t('.title')
 %ul.nav.nav-pills.nav-stacked
-  = menu_item 'surveys'
+  %li
+    = link_to Survey.model_name.human, '#', "ui-sref" => "surveys.list"

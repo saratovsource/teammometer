@@ -1,2 +1,3 @@
-%h1= t('.title')
-= link_to 'New survey', '#', class:"btn btn-default"
+.btn-group
+  %a.btn(ui-sref="surveys.new") New
+.content(ui-view)
