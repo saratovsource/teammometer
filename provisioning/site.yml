@@ -1,0 +1,17 @@
+---
+- hosts: all
+
+  roles:
+    - common
+    - imagening
+    - servers
+    - languages
+
+  tasks:
+    - name: install ansible modules requirements
+      apt: pkg={{ item }} state=installed update_cache=yes cache_valid_time=3600
+      sudo: true
+      with_items:
+        - python-psycopg2
+        - python-pycurl
+        - python-apt

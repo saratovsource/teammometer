@@ -1,0 +1,6 @@
+- name: install RVM and Ruby
+  shell: curl -sSL https://get.rvm.io | bash -s stable --ruby=2.1
+    creates=~/.rvm/rubies/ruby-2.1.0/bin/ruby
+
+- name: Setup defaults for Gem
+  copy: src=gemrc dest=~/.gemrc
