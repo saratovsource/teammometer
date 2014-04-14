@@ -1,0 +1,8 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "angularjs-rails-resource": "latest",
+    "angular-ui-router": "latest",
+    "angular-resource": "latest"
+  }
+}
