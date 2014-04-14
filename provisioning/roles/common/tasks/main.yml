@@ -1,4 +1,8 @@
 ---
+- name: Add nodejs repo
+  apt_repository: repo='ppa:chris-lea/node.js' state=present
+  sudo: true
+
 - name: install ansible modules requirements
   apt: pkg={{ item }} state=installed update_cache=yes cache_valid_time=3600
   sudo: true
@@ -6,6 +10,9 @@
     - python-psycopg2
     - python-pycurl
     - python-apt
+    - python
+    - g++
+    - make
 
 - name: install packages
   apt: pkg={{ item }} state=installed update_cache=yes cache_valid_time=3600
