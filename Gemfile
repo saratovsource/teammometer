@@ -18,6 +18,7 @@ gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'unicorn'
 gem 'unicorn-rails'
+gem 'puma'
 # Build JSON APIs with ease.
 gem 'active_model_serializers'
 gem 'validates'
