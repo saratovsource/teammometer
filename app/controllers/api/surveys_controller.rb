@@ -12,6 +12,11 @@ class Api::SurveysController < Api::ApplicationController
     respond_with @survey, serializer: SurveySerializer
   end
 
+  def show
+    @survey = current_user.surveys.find(params[:id])
+    respond_with @survey, serializer: SurveySerializer
+  end
+
   def update
     @survey = current_user.surveys.find(params[:id]).becomes(NewSurveyType)
     @survey.assign_attributes(params[:survey])

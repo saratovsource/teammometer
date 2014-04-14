@@ -21,6 +21,16 @@ describe Api::SurveysController do
     end
   end
 
+  describe '.show' do
+    let(:survey) { create :survey, interviewer: current_user }
+    let(:ret_survey) { assigns(:survey) }
+    it "returns existing survey" do
+      get :show, default_params.merge(id: survey)
+      expect(response).to be_success
+      expect(ret_survey).to be_present
+    end
+  end
+
   describe '.update' do
     let(:survey) { create :survey, interviewer: current_user }
     let(:attrs) { { id: survey, survey: { title: generate(:string) } } }
