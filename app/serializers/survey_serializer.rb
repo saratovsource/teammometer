@@ -1,5 +1,5 @@
 class SurveySerializer < ApplicationSerializer
-  attributes :id, :title, :created_at, :updated_at
+  attributes :id, :title, :created_at, :updated_at, :respondents
 
   def created_at
     I18n.l(object.created_at, format: :short)

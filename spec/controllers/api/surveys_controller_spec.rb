@@ -18,6 +18,7 @@ describe Api::SurveysController do
       post :create, default_params.merge(survey: attrs)
       expect(response).to be_success
       expect(survey).to be_present
+      expect(survey.respondents).to be_present
     end
   end
 

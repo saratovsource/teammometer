@@ -6,11 +6,11 @@ FactoryGirl.define do
     interviewer
 
     factory :new_survey do
-      survey_participants do |a|
-        [ a.association( :survey_participant ),
-          a.association( :survey_participant ),
-          a.association( :survey_participant ) ]
-      end
+      respondents_attributes {
+        [ attributes_for(:respondent),
+          attributes_for(:respondent),
+          attributes_for(:respondent) ]
+      }
     end
   end
 end
