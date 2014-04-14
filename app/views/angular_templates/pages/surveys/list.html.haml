@@ -1,1 +1,23 @@
 %h3 List
+%table.table.table-striped
+  %thead
+    %th
+      %a.btn.btn-default(ui-sref="surveys.new")
+        %span.glyphicon.glyphicon-plus
+    %th= Survey.human_attribute_name(:title)
+    %th= Survey.human_attribute_name(:updated_at)
+    %th= Survey.human_attribute_name(:created_at)
+    %th
+  %tbody
+    %tr(ng-repeat="survey in surveys")
+      %td {{ $index + 1 }}
+      %td
+        %a(ui-sref="surveys.show({id:survey.id})") {{ survey.title }}
+      %td {{ survey.updatedAt }}
+      %td {{ survey.createdAt }}
+      %td
+        .btn-group
+          %a.btn.btn-default(ui-sref="surveys.edit({id:survey.id})")
+            %span.glyphicon.glyphicon-pencil
+          %a.btn.btn-danger(ng-click="delete_survey(survey)")
+            %span.glyphicon.glyphicon-trash

@@ -5,3 +5,5 @@ proxy_env:
   LC_ALL: en_US.UTF-8
   LC_LCTYPE: en_US.UTF-8
   LC_MESSAGES: POSIX
+ruby:
+  version: 2.1.1
