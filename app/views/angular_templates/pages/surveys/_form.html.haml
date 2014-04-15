@@ -1,4 +1,4 @@
-= simple_form_for :survey, url: '', html: {"ng-submit" => "saveSurvey()"} do |f|
+= simple_form_for NewSurveyType.new, url: '', html: {"ng-submit" => "saveSurvey()"} do |f|
   = f.input :title, input_html: {"ng-model" => "survey.title"}
   .respondents(ng-repeat="respondent in survey.respondents")
     = f.simple_fields_for :respondents, Respondent.new do |ff|

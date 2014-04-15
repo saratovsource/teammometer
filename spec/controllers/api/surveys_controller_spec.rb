@@ -12,7 +12,7 @@ describe Api::SurveysController do
   end
 
   describe '.create' do
-    let(:attrs) { attributes_for :new_survey }
+    let(:attrs) { attributes_for :new_survey, :with_qualities }
     let(:survey) { assigns(:survey) }
     it "returns new survey" do
       post :create, default_params.merge(survey: attrs)
@@ -41,7 +41,6 @@ describe Api::SurveysController do
       patch :update, default_params.merge(attrs)
       expect(response).to be_success
       expect(new_survey.title).to eq(attrs[:survey][:title])
-      expect(survey.personal_quality_list).to be_present
     end
   end
 

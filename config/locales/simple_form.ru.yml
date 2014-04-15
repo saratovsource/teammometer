@@ -3,8 +3,8 @@ ru:
   helpers:
     submit:
       survey:
-        create: Добавить
-        update: Изменить
+        create: "Сохранить"
+        update: "Сохранить"
       user:
         create: "Зарегистрироваться"
       session_type:
