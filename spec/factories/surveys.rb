@@ -11,6 +11,9 @@ FactoryGirl.define do
           attributes_for(:respondent),
           attributes_for(:respondent) ]
       }
+      personal_quality_list { [ generate(:string),
+        generate(:string),
+        generate(:string) ] }
     end
   end
 end
