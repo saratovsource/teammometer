@@ -1,18 +1,12 @@
 ---
-- name: Add nodejs repo
-  apt_repository: repo='ppa:chris-lea/node.js' state=present
-  sudo: true
-
 - name: install ansible modules requirements
-  apt: pkg={{ item }} state=installed update_cache=yes cache_valid_time=3600
+  apt: pkg={{ item }} state=installed
   sudo: true
   with_items:
     - python-psycopg2
     - python-pycurl
     - python-apt
     - python
-    - g++
-    - make
 
 - name: install packages
   apt: pkg={{ item }} state=installed update_cache=yes cache_valid_time=3600
@@ -24,4 +18,6 @@
     - git
 
     - libxml2-dev
-    - npm
+
+    - g++
+    - make
