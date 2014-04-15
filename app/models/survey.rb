@@ -2,6 +2,7 @@ class Survey < ActiveRecord::Base
   validates   :title, presence: true
   belongs_to  :interviewer, class_name: "User"
   has_many    :respondents, dependent: :destroy
+  has_many    :interview_forms
   acts_as_taggable_on :personal_qualities
 
   accepts_nested_attributes_for :respondents, allow_destroy: true
