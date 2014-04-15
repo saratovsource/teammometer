@@ -1,5 +1,8 @@
 TeamMometer::Application.routes.draw do
-  mount UserMailView => 'user_mail_view' if Rails.env.development?
+  if Rails.env.development?
+    mount UserMailView => 'user_mail_view'
+    mount SurveyMailView => 'survey_mail_view'
+  end
 
   # Api
   namespace :api do
