@@ -1,5 +1,14 @@
 ---
 ru:
+  angular_templates:
+    pages:
+      surveys:
+        index:
+          title: Ваши опросы
+        edit:
+          title: Редактирование опроса
+        new:
+          title: Новый опрос
   web:
     users:
       new:

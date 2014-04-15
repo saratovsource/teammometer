@@ -2,6 +2,9 @@
 ru:
   helpers:
     submit:
+      survey:
+        create: Добавить
+        update: Изменить
       user:
         create: "Зарегистрироваться"
       session_type:
@@ -13,6 +16,11 @@ ru:
       text: 'обязательно к заполнению'
       mark: '*'
     labels:
+      survey:
+        title: Название
+      respondent:
+        name: ФИО
+        email: Электронная почта
       user:
         new:
           email: "Email"
