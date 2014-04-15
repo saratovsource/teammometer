@@ -14,4 +14,8 @@ FactoryGirl.define do
   sequence :confirmation_token, aliases: [:uid] do |n|
     SecureRandom.urlsafe_base64
   end
+
+  sequence :personal_quality do |n|
+    {text: "quality-#{n}"}
+  end
 end

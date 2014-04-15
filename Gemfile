@@ -25,7 +25,9 @@ gem 'validates'
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby'
 gem 'mail_view'
+
 gem "bower-rails", "~> 0.7.1"
+gem 'acts-as-taggable-on'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :mri_21, :rbx]

@@ -17,5 +17,6 @@
 //= require 'angular-resource/angular-resource'
 //= require 'angular-ui-router/release/angular-ui-router'
 //= require 'angularjs-rails-resource/angularjs-rails-resource'
+//= require ng-tags-input/ng-tags-input
 //= require angular_boot
 //= require teammometer/app

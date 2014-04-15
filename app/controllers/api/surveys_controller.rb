@@ -6,8 +6,9 @@ class Api::SurveysController < Api::ApplicationController
   end
 
   def create
-    @survey = NewSurveyType.new(params[:survey])
+    @survey = NewSurveyType.new
     @survey.interviewer = current_user
+    @survey.assign_attributes(params[:survey])
     @survey.save
     respond_with @survey, serializer: SurveySerializer
   end

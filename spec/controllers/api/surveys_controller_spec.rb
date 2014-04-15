@@ -12,18 +12,19 @@ describe Api::SurveysController do
   end
 
   describe '.create' do
-    let(:attrs) { attributes_for :new_survey }
+    let(:attrs) { attributes_for :new_survey, :with_qualities }
     let(:survey) { assigns(:survey) }
     it "returns new survey" do
       post :create, default_params.merge(survey: attrs)
       expect(response).to be_success
       expect(survey).to be_present
       expect(survey.respondents).to be_present
+      expect(survey.personal_quality_list).to be_present
     end
   end
 
   describe '.show' do
-    let(:survey) { create :survey, interviewer: current_user }
+    let(:survey) { create :new_survey, interviewer: current_user }
     let(:ret_survey) { assigns(:survey) }
     it "returns existing survey" do
       get :show, default_params.merge(id: survey)
@@ -33,7 +34,7 @@ describe Api::SurveysController do
   end
 
   describe '.update' do
-    let(:survey) { create :survey, interviewer: current_user }
+    let(:survey) { create :new_survey, interviewer: current_user }
     let(:attrs) { { id: survey, survey: { title: generate(:string) } } }
     let(:new_survey) { assigns(:survey) }
     it "changes attributes" do

@@ -5,12 +5,18 @@ FactoryGirl.define do
     title { generate :string }
     interviewer
 
-    factory :new_survey do
+    factory :new_survey, class: 'NewSurveyType' do
       respondents_attributes {
         [ attributes_for(:respondent),
           attributes_for(:respondent),
           attributes_for(:respondent) ]
       }
+
+    end
+    trait :with_qualities do
+      personal_qualities { [ generate(:personal_quality),
+                                generate(:personal_quality),
+                                generate(:personal_quality) ] }
     end
   end
 end
