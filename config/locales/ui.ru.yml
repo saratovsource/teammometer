@@ -3,6 +3,8 @@ ru:
   angular_templates:
     pages:
       surveys:
+        form:
+          tags: "Добавьте личностные качества"
         index:
           title: Ваши опросы
         edit:

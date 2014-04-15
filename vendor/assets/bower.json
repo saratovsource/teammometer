@@ -3,6 +3,7 @@
   "dependencies": {
     "angularjs-rails-resource": "latest",
     "angular-ui-router": "latest",
-    "angular-resource": "latest"
+    "angular-resource": "latest",
+    "ng-tags-input": "2.0.1"
   }
 }

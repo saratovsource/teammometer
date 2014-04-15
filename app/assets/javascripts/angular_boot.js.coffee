@@ -6,5 +6,6 @@ deps = [
   'ngResource'
   'rails'
   'ui.router'
+  'ngTagsInput'
 ]
 angular.module('teammometer', deps)
