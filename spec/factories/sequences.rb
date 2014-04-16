@@ -18,4 +18,8 @@ FactoryGirl.define do
   sequence :personal_quality do |n|
     {text: "quality-#{n}"}
   end
+
+  sequence :token do |n|
+    SecureRandom.urlsafe_base64
+  end
 end

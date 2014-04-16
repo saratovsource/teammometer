@@ -25,7 +25,7 @@ gem 'validates'
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby'
 gem 'mail_view'
-
+gem 'wisper'
 gem "bower-rails", "~> 0.7.1"
 gem 'acts-as-taggable-on'
 group :development do

@@ -20,6 +20,7 @@ class Api::SurveysController < Api::ApplicationController
 
   def update
     @survey = current_user.surveys.find(params[:id]).becomes(NewSurveyType)
+    @survey.subscribe(MailNotificationsListener.new)
     @survey.assign_attributes(params[:survey])
     @survey.save
     respond_with @survey, serializer: SurveySerializer

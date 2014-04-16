@@ -18,6 +18,3 @@
     - git
 
     - libxml2-dev
-
-    - g++
-    - make
