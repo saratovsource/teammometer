@@ -14,7 +14,7 @@ class Survey < ActiveRecord::Base
     state :started
     state :finished
 
-    after_transition initial: :started, do: :start_the_survey
+    after_transition initial: :started,  do: :start_the_survey
 
     event :start do
       transition initial: :started
