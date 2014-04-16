@@ -1,4 +1,5 @@
 %h3= t('.title')
 %ul.nav.nav-pills.nav-stacked
-  %li
-    = link_to Survey.model_name.human, '#', "ui-sref" => "surveys.list"
+  %li(ng-class='{active: $state.includes("surveys.**")}')
+    %a(ui-sref="surveys.list")
+      %span.glyphicon.glyphicon-chevron-right= Survey.model_name.human
