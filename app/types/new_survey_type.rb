@@ -4,7 +4,7 @@ class NewSurveyType < Survey
 
   def assign_attributes(values = {})
     super(values)
-    self.personal_quality_list = deserialized_qualities(values.fetch(:personal_qualities, []))
+    self.personal_quality_list = deserialized_qualities(values[:personal_qualities] || [])
   end
 
   protected

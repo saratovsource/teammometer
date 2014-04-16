@@ -8,3 +8,9 @@ angular.module('teammometer.lib', [])
 angular.module('teammometer.directives', [])
 angular.module('teammometer.controllers', [])
 angular.module('teammometer.resources', [])
+  .run [
+    '$rootScope', '$state', '$stateParams',
+    ($rootScope,   $state,   $stateParams) ->
+      $rootScope.$state = $state
+      $rootScope.$stateParams = $stateParams
+  ]

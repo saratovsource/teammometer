@@ -35,13 +35,35 @@ describe Api::SurveysController do
 
   describe '.update' do
     let(:survey) { create :new_survey, interviewer: current_user }
-    let(:attrs) { { id: survey, survey: { title: generate(:string) } } }
     let(:new_survey) { assigns(:survey) }
-    it "changes attributes" do
-      patch :update, default_params.merge(attrs)
-      expect(response).to be_success
-      expect(new_survey.title).to eq(attrs[:survey][:title])
+    context "update attributes" do
+      let(:attrs) { { id: survey, survey: { title: generate(:string) } } }
+      it "changes attributes" do
+        patch :update, default_params.merge(attrs)
+        expect(response).to be_success
+        expect(new_survey.title).to eq(attrs[:survey][:title])
+      end
     end
+
+    context "start project" do
+      let(:attrs) { { id: survey, survey: { state_event: "start" } } }
+      it "shange state to " do
+        patch :update, default_params.merge(attrs)
+        expect(response).to be_success
+        expect(new_survey).to be_started
+      end
+    end
+
+    context "finish project" do
+      let(:survey) { create :new_survey, interviewer: current_user, state: "started" }
+      let(:attrs) { { id: survey, survey: { state_event: "finish" } } }
+      it "shange state to " do
+        patch :update, default_params.merge(attrs)
+        expect(response).to be_success
+        expect(new_survey).to be_finished
+      end
+    end
+
   end
 
   describe '.destroy' do

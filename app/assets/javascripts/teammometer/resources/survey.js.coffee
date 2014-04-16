@@ -1,10 +1,18 @@
 angular.module('teammometer')
   .factory 'Survey', [
     'railsResourceFactory', 'railsSerializer', 'Respondent', (railsResourceFactory, railsSerializer, Respondent) ->
-      railsResourceFactory
+      res = railsResourceFactory
         url: '/api/surveys'
         name: 'survey'
         serializer: railsSerializer ->
           @nestedAttribute('respondents')
-          # @serializeWith('respondents', Respondent)
+      res.prototype.start = () ->
+        @state = 'started'
+        @state_event = "start"
+        @save()
+      res.prototype.finish = () ->
+        @state = 'finished'
+        @state_event = "finish"
+        @save()
+      res
   ]
