@@ -9,18 +9,19 @@ class Survey < ActiveRecord::Base
 
   accepts_nested_attributes_for :respondents, allow_destroy: true
 
-  state_machine initial: :disabled do
-    state :enabled
-    state :disabled
+  state_machine initial: :initial do
+    state :initial
+    state :started
+    state :finished
 
-    after_transition disabled: :enabled, do: :start_the_survey
+    after_transition initial: :started, do: :start_the_survey
 
-    event :enable do
-      transition disabled: :enabled
+    event :start do
+      transition initial: :started
     end
 
-    event :disable do
-      transition enabled: :disabled
+    event :finish do
+      transition started: :finished
     end
 
   end

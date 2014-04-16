@@ -20,3 +20,7 @@
             %span.glyphicon.glyphicon-pencil
           %a.btn.btn-danger(ng-click="delete_survey(survey)")
             %span.glyphicon.glyphicon-trash
+          %button.btn.btn-default(ng-click="survey.start()" ng-show="survey.state != 'started'" ng-disabled="survey.state == 'finished'")
+            %span.glyphicon.glyphicon-play-circle
+          %button.btn.btn-danger(ng-click="survey.finish()" ng-show="survey.state == 'started'" ng-enabled="survey.state == 'started'")
+            %span.glyphicon.glyphicon-off
