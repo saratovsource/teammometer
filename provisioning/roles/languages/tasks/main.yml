@@ -9,14 +9,6 @@
   apt: pkg=nodejs purge=true
   sudo: true
 
-- name: Install nodejs
-  apt: pkg={{ item }} state=installed update_cache=yes cache_valid_time=3600
-  sudo: true
-  environment: proxy_env
-  with_items:
-    - python-software-properties
-    - nodejs
-
 - name: Install bower
   npm: name=bower state=latest global=true
   sudo: true
