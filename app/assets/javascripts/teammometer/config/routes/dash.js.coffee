@@ -4,6 +4,6 @@ angular.module('teammometer')
       $tRouterProvider.setTemplatesPath("templates")
       $stateProvider
         .state 'dash',
-          url: ""
+          url: "/"
           templateUrl: $tRouterProvider.page("dashboard")
   ]
