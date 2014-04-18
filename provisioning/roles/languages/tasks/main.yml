@@ -5,6 +5,10 @@
 - name: Setup defaults for Gem
   copy: src=gemrc dest=~/.gemrc
 
+- name: Remove old nodejs
+  apt: pkg=nodejs purge=true
+  sudo: true
+
 - name: node.js | Make sure that the directory to hold the node.js binaries exists
   sudo: true
   file:
