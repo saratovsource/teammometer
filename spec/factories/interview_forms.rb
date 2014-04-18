@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :interview_form do
-    respondent
-    survey
+    respondent { association :respondent }
+    survey { association :new_survey }
     token { generate :token }
   end
 end
