@@ -6,6 +6,7 @@ TeamMometer::Application.routes.draw do
 
   # Api
   namespace :api do
+    resources :interview_forms, only: [:show, :update]
     resources :personal_qualities, only: [:index]
     resources :surveys
   end

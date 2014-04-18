@@ -1,0 +1,10 @@
+.container
+  .row
+    %h2 {{ interview.respondent.name }}
+  .row
+    - %w{attraction referentometry coe}.each do |name|
+      .panel.panel-default
+        .panel-heading
+          %h3= t(".headings.#{name}")
+          %p=  t(".questions.#{name}")
+        .panel-body= render "angular_templates/pages/interviews/#{name}", name: name

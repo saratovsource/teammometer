@@ -1,4 +1,3 @@
-.container
-  %h1= @interview.survey.title
-  %h2= @interview.respondent.name
-  %p Coming soon...
+.container(ng-app="teammometer")
+  %h1= t '.title'
+  .interview(ui-view)
