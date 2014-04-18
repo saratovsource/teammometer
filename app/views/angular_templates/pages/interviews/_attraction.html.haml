@@ -1,0 +1,16 @@
+.col-md-6
+  .alert.alert-info(ng-hide="attraction_users.length > 0") Chose 2-5 elements from ->
+  %ul.list-group
+    %li.list-group-item(ng-repeat="user in attraction_users")
+      %span.label.label-default {{ $index + 1 }}
+      &nbsp;
+      {{ user.name }}
+      %button.btn.btn-default.pull-right(ng-click="team_utils.remove_from(user, attraction_users)")
+        %span.glyphicon.glyphicon-chevron-right
+      .clearfix
+.col-md-6
+  %ul.list-group
+    %li.list-group-item(ng-repeat="respondent in respondents" ng-hide="attracted(respondent)")
+      %button.btn.btn-default(ng-click="team_utils.add_to(respondent, attraction_users)" ng-show="attraction_users.length < 5")
+        %span.glyphicon.glyphicon-chevron-left
+      {{ respondent.name }}
