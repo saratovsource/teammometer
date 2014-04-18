@@ -2,7 +2,8 @@
   = f.input :title, input_html: {"ng-model" => "survey.title"}
   .row
     .form-group.string.optional.survey_respondents_name.col-xs-12
-      = content_tag('tags-input', nil, "ng-model" => "survey.personalQualities", "add-on-comma" => "false", "placeholder" => t('.tags'))
+      %tags-input(ng-model="survey.personalQualities" add-on-comma="false" placeholder="#{t('.tags')}")
+        %auto-complete(source="query($query)")
   .respondents(ng-repeat="respondent in survey.respondents")
     = f.simple_fields_for :respondents, Respondent.new do |ff|
       .respondent.row(ng-hide="respondent._destroy")
