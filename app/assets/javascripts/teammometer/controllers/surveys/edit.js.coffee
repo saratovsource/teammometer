@@ -1,7 +1,7 @@
 angular.module('teammometer')
   .controller 'SurveyCtrlEdit', [
-    '$scope', '$location', '$state', 'Survey','$stateParams', 'Respondent',
-    ($scope, $location, $state, Survey, $stateParams, Respondent) ->
+    '$scope', '$location', '$state', 'Survey','$stateParams', 'Respondent', 'PersonalQuality',
+    ($scope, $location, $state, Survey, $stateParams, Respondent, PersonalQuality) ->
       Survey.get($stateParams.id).then \
       (survey) ->
         $scope.survey = survey
@@ -13,4 +13,6 @@ angular.module('teammometer')
         $scope.survey.respondents.push(respondent)
       $scope.remove_respondent = (resp) ->
         resp["_destroy"] = 1
+      $scope.query = (q) ->
+        PersonalQuality.query({ query: q })
   ]
