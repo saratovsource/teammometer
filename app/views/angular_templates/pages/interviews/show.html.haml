@@ -1,11 +1,7 @@
 .container(ng-hide="finish")
   %h2 {{ interview.respondent.name }}
   - %w{attraction referentometry coe}.each do |name|
-    .panel.panel-default
-      .panel-heading
-        %h3= t(".headings.#{name}")
-        %p=  t(".questions.#{name}")
-      .panel-body.row= render "angular_templates/pages/interviews/#{name}", name: name
+    .panel.panel-default= render "angular_templates/pages/interviews/#{name}"
   .text-center
     %button.btn.btn-primary.btn-lg(ng-click="save()" ng-show="valid()") Send
 .container(ng-show="finish")

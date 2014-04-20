@@ -1,6 +1,8 @@
 class NewSurveyType < Survey
   include ApplicationType
-  permit :title, :state_event, respondents_attributes: [:id, :name, :email, :_destroy]
+  permit  :title, :state_event,
+          :attraction_question, :referention_question, :personal_qualities_question,
+          respondents_attributes: [:id, :name, :email, :_destroy]
 
   def assign_attributes(values = {})
     super(values)

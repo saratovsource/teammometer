@@ -9,6 +9,7 @@ angular.module('teammometer')
       InterviewForm.get($stateParams.token).then \
       (interview) ->
         $scope.interview = interview
+        $scope.survey = interview.survey
         $scope.respondents = team_utils.clone interview.survey.respondents
         $scope.personal_qualities = interview.survey.personalQualities.map (itm) -> itm.name
 
