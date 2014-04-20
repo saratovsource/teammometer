@@ -1,8 +1,8 @@
 .container(ng-hide="finish")
-  %h2 {{ interview.respondent.name }}
+  %h2 {{ interview.respondent.name + ',' }}
   - %w{attraction referentometry coe}.each do |name|
     .panel.panel-default= render "angular_templates/pages/interviews/#{name}"
   .text-center
     %button.btn.btn-primary.btn-lg(ng-click="save()" ng-show="valid()") Send
 .container(ng-show="finish")
-  %h1 Thanks!!!
+  %h1= t('.title')
