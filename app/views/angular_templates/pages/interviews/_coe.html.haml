@@ -4,7 +4,7 @@
     %li.list-group-item(ng-repeat="quality in user_qualities")
       %span.label.label-default {{ $index + 1 }}
       &nbsp;
-      {{ quality.name }}
+      {{ quality }}
       %button.btn.btn-default.pull-right(ng-click="team_utils.remove_from(quality, user_qualities)")
         %span.glyphicon.glyphicon-chevron-right
       .clearfix
@@ -13,4 +13,4 @@
     %li.list-group-item(ng-repeat="quality in personal_qualities" ng-hide="have_quality(quality)")
       %button.btn.btn-default(ng-click="team_utils.add_to(quality, user_qualities)" ng-show="user_qualities.length < 5")
         %span.glyphicon.glyphicon-chevron-left
-      {{ quality.name }}
+      {{ quality }}
