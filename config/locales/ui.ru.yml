@@ -2,6 +2,9 @@
 ru:
   angular_templates:
     pages:
+      interviews:
+        show:
+          title: "Мы благодарим Вас за ответы и Ваше время, потраченное на наш опрос."
       surveys:
         form:
           tags: "Добавьте личностные качества"

@@ -9,8 +9,9 @@ angular.module('teammometer')
       InterviewForm.get($stateParams.token).then \
       (interview) ->
         $scope.interview = interview
+        $scope.survey = interview.survey
         $scope.respondents = team_utils.clone interview.survey.respondents
-        $scope.personal_qualities = interview.survey.personalQualities
+        $scope.personal_qualities = interview.survey.personalQualities.map (itm) -> itm.name
 
       $scope.attracted = (resp) ->
         resp in $scope.attraction_users
@@ -22,12 +23,14 @@ angular.module('teammometer')
       $scope.valid = () ->
         $scope.attraction_users.length >= 3 &&
         $scope.referention_users.length >= 3 &&
-        $scope.user_qualities.length >= 3
+        $scope.user_qualities.length >= 5
 
       $scope.save = () ->
         $scope.interview.answer =
-          attraction:         team_utils.to_hsh( $scope.attraction_users )
-          referention:        team_utils.to_hsh( $scope.referention_users )
-          personal_qualities: team_utils.to_hsh( $scope.user_qualities )
-        $scope.finish = true
+          attraction_users:      team_utils.to_hsh( $scope.attraction_users )
+          referention_users:     team_utils.to_hsh( $scope.referention_users )
+          personal_quality_list: $scope.user_qualities
+        $scope.interview.save().then \
+        (ret) ->
+          $scope.finish = true
   ]

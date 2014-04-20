@@ -12,5 +12,4 @@ class InterviewForm < ActiveRecord::Base
     end
   end
   include InterviewForRepository
-
 end
