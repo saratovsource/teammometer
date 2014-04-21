@@ -12,6 +12,7 @@ angular.module('teammometer')
         $scope.survey = interview.survey
         $scope.respondents = team_utils.clone interview.survey.respondents
         $scope.personal_qualities = interview.survey.personalQualities.map (itm) -> itm.name
+        $scope.current_respondent = interview.respondent
 
       $scope.attracted = (resp) ->
         resp in $scope.attraction_users

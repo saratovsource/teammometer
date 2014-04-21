@@ -8,7 +8,9 @@ TeamMometer::Application.routes.draw do
   namespace :api do
     resources :interview_forms, only: [:show, :update]
     resources :personal_qualities, only: [:index]
-    resources :surveys
+    resources :surveys do
+      resource :report, only: [:show]
+    end
   end
 
   # Web

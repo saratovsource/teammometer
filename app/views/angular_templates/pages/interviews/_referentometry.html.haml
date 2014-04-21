@@ -8,12 +8,12 @@
         %span.label.label-default {{ $index + 1 }}
         &nbsp;
         {{ user.name }}
-        %button.btn.btn-default.pull-right(ng-click="team_utils.remove_from(user, referention_users)")
+        %button.btn.btn-default.pull-right(ng-click="team_utils.remove_from(user.id, referention_users)")
           %span.glyphicon.glyphicon-chevron-right
         .clearfix
   .col-md-6
     %ul.list-group
-      %li.list-group-item(ng-repeat="respondent in respondents" ng-hide="referented(respondent)")
-        %button.btn.btn-default(ng-click="team_utils.add_to(respondent, referention_users)" ng-show="referention_users.length < 5")
+      %li.list-group-item(ng-repeat="respondent in respondents" ng-hide="referented(respondent.id)")
+        %button.btn.btn-default(ng-click="team_utils.add_to(respondent.id, referention_users)" ng-show="referention_users.length < 5")
           %span.glyphicon.glyphicon-chevron-left
         {{ respondent.name }}

@@ -11,6 +11,5 @@ module Interview
       end
     end
 
-
   end
 end
