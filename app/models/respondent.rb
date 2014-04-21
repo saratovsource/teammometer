@@ -3,6 +3,7 @@ class Respondent < ActiveRecord::Base
   validates :email, :name, presence: true, uniqueness: { scope: :survey_id }, if: -> { new_record? }
   validates :email, email: true
   has_one   :interview_form
+  has_many  :attraction_users, through: :interview_form
 
   after_commit :make_interview_form
 

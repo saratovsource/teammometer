@@ -1,0 +1,13 @@
+.panel.panel-default
+  .panel-heading= t('.title')
+  .panel-body
+    %table.table.table-bordered
+      %thead
+        %tr
+          %th User
+          %th(ng-repeat="(key, value) in sociometry" ng-hide="key == 'summary'") {{ users_map[key].name }}
+      %tbody
+        %tr(ng-repeat="(respondent_id, att_users) in sociometry" ng-class="{summary: 'info'}[respondent_id]")
+          %td {{ users_map[respondent_id].name }}
+          %td.text-center(ng-repeat="rate in att_users")
+            %span(ng-show="rate > 0") {{ rate }}

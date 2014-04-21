@@ -1,6 +1,6 @@
 class Api::ReportsController < Api::ApplicationController
   def show
-    @report = SurveyReport.new(current_survey)
+    @report = current_survey.becomes(SurveyReport)
     respond_with @report, serializer: SurveyReportSerializer
   end
 

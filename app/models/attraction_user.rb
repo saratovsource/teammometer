@@ -1,0 +1,2 @@
+class AttractionUser < UserMetric
+end

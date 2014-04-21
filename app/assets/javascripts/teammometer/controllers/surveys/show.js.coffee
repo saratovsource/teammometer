@@ -6,6 +6,7 @@ angular.module('teammometer')
       (survey) -> $scope.processSurvey(survey)
 
       $scope.getReport = (survey) ->
+        $scope.survey = survey
         SurveyReport.query(null, {surveyId: survey.id}).then \
         (report) -> $scope.processReport(report)
 
@@ -13,6 +14,10 @@ angular.module('teammometer')
         $scope.getReport(survey)
 
       $scope.processReport = (report) ->
-        console.debug report
+        $scope.report = report
+        $scope.users_map = {}
+        for resp in report.respondents
+          $scope.users_map[resp.id] = resp
+        $scope.sociometry = report.sociometry
 
   ]
