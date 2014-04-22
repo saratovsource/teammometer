@@ -9,6 +9,16 @@ class SurveyReport < Survey
   end
 
   def sociometry
+    cross_table(:attraction_users)
+  end
+
+  def referentometry
+    cross_table(:referention_users)
+  end
+
+  protected
+
+  def cross_table(users_type)
     summary = {}
     hsh = {}
     interview_forms.each do |form_x|
@@ -16,7 +26,7 @@ class SurveyReport < Survey
       interview_forms.each do |form_y|
         position = -1
         summary[form_y.respondent.id] ||= 0
-        au = form_x.attraction_users.where(respondent_id: form_y.respondent.id).first
+        au = form_x.send(users_type).where(respondent_id: form_y.respondent.id).first
         if au.present?
           position = au.position
           summary[form_y.respondent.id] += position
