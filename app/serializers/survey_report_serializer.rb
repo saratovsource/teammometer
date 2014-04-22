@@ -1,4 +1,5 @@
 class SurveyReportSerializer < ApplicationSerializer
+  attributes :coe
   attributes :title, :sociometry, :referentometry
   has_many :respondents, serializer: Report::UserSerializer
   has_many :completed_interviews,   serializer: Report::InterviewSerializer
