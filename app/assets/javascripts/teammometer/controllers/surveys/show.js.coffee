@@ -19,5 +19,6 @@ angular.module('teammometer')
         for resp in report.respondents
           $scope.users_map[resp.id] = resp
         $scope.sociometry = report.sociometry
+        $scope.referentometry = report.referentometry
 
   ]
