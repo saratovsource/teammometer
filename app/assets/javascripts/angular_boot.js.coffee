@@ -7,5 +7,6 @@ deps = [
   'rails'
   'ui.router'
   'ngTagsInput'
+  'googlechart'
 ]
 angular.module('teammometer', deps)
