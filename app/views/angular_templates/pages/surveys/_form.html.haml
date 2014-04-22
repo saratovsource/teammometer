@@ -2,7 +2,7 @@
   = f.input :title, input_html: {"ng-model" => "survey.title"}
   .row
     .form-group.string.optional.survey_respondents_name.col-xs-12
-      %tags-input(ng-model="survey.personalQualities" add-on-comma="false" placeholder="#{t('.tags')}")
+      %tags-input(ng-model="survey.personalQualities" add-on-comma="false" replace-spaces-with-dashes="false" placeholder="#{t('.tags')}")
         %auto-complete(source="query($query)")
     .col-xs-12= f.input :attraction_question, as: :text, input_html: {"ng-model" => "survey.attractionQuestion"}
     .col-xs-12= f.input :referention_question, as: :text, input_html: {"ng-model" => "survey.referentionQuestion"}
