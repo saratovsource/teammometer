@@ -1,0 +1,4 @@
+.panel.panel-default
+  .panel-heading= t(".title")
+  .panel-body(ng-controller='SurveyChartsCtrl')
+    .row(google-chart chart="metrics_chart")

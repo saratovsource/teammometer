@@ -4,6 +4,7 @@
     "angularjs-rails-resource": "latest",
     "angular-ui-router": "latest",
     "angular-resource": "latest",
-    "ng-tags-input": "2.0.1"
+    "ng-tags-input": "2.0.1",
+    "angular-google-chart": "latest"
   }
 }

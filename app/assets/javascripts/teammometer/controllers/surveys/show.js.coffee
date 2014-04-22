@@ -1,9 +1,10 @@
 angular.module('teammometer')
   .controller 'SurveyCtrlShow', [
-    '$scope', '$location', '$state', 'Survey', 'SurveyReport', '$stateParams',
-    ($scope, $location, $state, Survey, SurveyReport, $stateParams) ->
-      Survey.get($stateParams.id).then \
-      (survey) -> $scope.processSurvey(survey)
+    '$scope', '$location', '$state', '$q', 'Survey', 'SurveyReport', '$stateParams',
+    ($scope, $location, $state, $q, Survey, SurveyReport, $stateParams) ->
+      $scope.load_data = () ->
+        Survey.get($stateParams.id).then \
+        (survey) -> $scope.processSurvey(survey)
 
       $scope.getReport = (survey) ->
         $scope.survey = survey
@@ -20,5 +21,7 @@ angular.module('teammometer')
           $scope.users_map[resp.id] = resp
         $scope.sociometry = report.sociometry
         $scope.referentometry = report.referentometry
+        $scope.$broadcast('reportLoaded')
 
+      $scope.load_data()
   ]
