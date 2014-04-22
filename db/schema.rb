@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140420164742) do
+ActiveRecord::Schema.define(version: 20140421191536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,8 +23,6 @@ ActiveRecord::Schema.define(version: 20140420164742) do
     t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.hstore   "attraction_users"
-    t.hstore   "referention_users"
     t.string   "token"
   end
 
@@ -72,6 +70,16 @@ ActiveRecord::Schema.define(version: 20140420164742) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
+
+  create_table "user_metrics", id: false, force: true do |t|
+    t.integer "interview_form_id", null: false
+    t.integer "respondent_id",     null: false
+    t.string  "type"
+    t.integer "position"
+  end
+
+  add_index "user_metrics", ["interview_form_id"], name: "index_user_metrics_on_interview_form_id", using: :btree
+  add_index "user_metrics", ["respondent_id"], name: "index_user_metrics_on_respondent_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email"

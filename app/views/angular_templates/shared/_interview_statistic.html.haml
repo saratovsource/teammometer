@@ -1,0 +1,32 @@
+.panel.panel-default
+  .panel-heading= t('.title')
+  .panel-body
+    %ul.list-group
+      %li.list-group-item(ng-show="report.completedInterviews")
+        %h3= t('.completed')
+      %li.list-group-item(ng-repeat="interview in report.completedInterviews")
+        %h4
+          {{ interview.respondent.name }}
+          %small {{ interview.respondent.email }}
+        .row
+          .col-md-4
+            %h4
+              %small= t(".attraction_users")
+            %ol
+              %li(ng-repeat="user in interview.attractionUsers")
+                {{ user.name }}
+          .col-md-4
+            %h4
+              %small= t(".referention_users")
+            %ol
+              %li(ng-repeat="user in interview.referentionUsers")
+                {{ user.name }}
+          .col-md-4
+            %h4
+              %small= t(".personal_qualities")
+            %ol
+              %li(ng-repeat="quality in interview.personalQualityList") {{ quality }}
+      %li.list-group-item(ng-show="report.incompletedInterviews")
+        %h3= t('.incompleted')
+      %li.list-group-item.list-group-item-danger(ng-repeat="interview in report.incompletedInterviews")
+        %h4 {{ interview.respondent.name }}

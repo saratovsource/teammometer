@@ -12,6 +12,15 @@ FactoryGirl.define do
           attributes_for(:respondent) ]
       }
 
+      factory :completed_survey do
+        interview_forms {|i| [
+          i.association( :completed_interview ),
+          i.association( :completed_interview ),
+          i.association( :completed_interview ),
+          i.association( :completed_interview )
+        ]}
+      end
+
     end
     trait :with_qualities do
       personal_qualities { [ generate(:personal_quality),
