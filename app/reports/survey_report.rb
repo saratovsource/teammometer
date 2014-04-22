@@ -16,7 +16,41 @@ class SurveyReport < Survey
     cross_table(:referention_users)
   end
 
+  def coe
+    @coe = { items: coe_table }
+    @coe[:summary] = @coe[:items].map{|k, v| v[:count]}
+    @coe[:percent] = coe_percent(@coe[:summary])
+    @coe
+  end
+
   protected
+
+  def coe_percent(arr)
+    arr.sort!
+    n = arr[-5, 5].sum
+    m = arr[0, 5].sum
+    100 * ( n-m ) / arr.sum
+  end
+
+  def coe_table
+    personal_qualities.inject({}) do |h, pq|
+      position = 0
+      quality = {name: pq.name}
+      quality[:positions] = interview_forms.inject({}) do |ub, iform|
+                      ub[iform.respondent.id] = personal_quality_rank(iform.personal_qualities, pq)
+                      position += 1 if ub[iform.respondent.id] > 0
+                      ub
+                    end
+      quality[:count] = position
+      h[pq.id] = quality
+      h
+    end
+  end
+
+  def personal_quality_rank(collection, item)
+    ind = collection.index(item)
+    ind ? ind + 1 : 0
+  end
 
   def cross_table(users_type)
     summary = {}
