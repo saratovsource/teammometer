@@ -2,6 +2,7 @@ angular.module('teammometer')
   .controller 'SurveyCtrlShow', [
     '$scope', '$location', '$state', '$q', 'Survey', 'SurveyReport', '$stateParams',
     ($scope, $location, $state, $q, Survey, SurveyReport, $stateParams) ->
+      $scope.show_details = false
       $scope.load_data = () ->
         Survey.get($stateParams.id).then \
         (survey) -> $scope.processSurvey(survey)
@@ -22,6 +23,9 @@ angular.module('teammometer')
         $scope.sociometry = report.sociometry
         $scope.referentometry = report.referentometry
         $scope.$broadcast('reportLoaded')
+
+      $scope.show_it = (header) ->
+        header == 'summary' || $scope.show_details
 
       $scope.load_data()
   ]
