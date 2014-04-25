@@ -5,10 +5,11 @@
       %li.list-group-item(ng-show="report.completedInterviews")
         %h3= t('.completed')
       %li.list-group-item(ng-repeat="interview in report.completedInterviews")
-        %h4
-          {{ interview.respondent.name }}
-          %small {{ interview.respondent.email }}
-        .row
+        %a(href='#' ng-click="respondent_collapsed = !respondent_collapsed")
+          %h4
+            {{ interview.respondent.name }}
+            %small {{ interview.respondent.email }}
+        .row(ng-show="respondent_collapsed")
           .col-md-4
             %h4
               %small= t(".attraction_users")
