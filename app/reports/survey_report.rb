@@ -25,7 +25,8 @@ class SurveyReport < Survey
 
   protected
 
-  def coe_percent(arr)
+  def coe_percent(arr = [])
+    return 0 if arr.empty?
     arr.sort!
     n = arr[-5, 5].sum
     m = arr[0, 5].sum
