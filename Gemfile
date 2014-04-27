@@ -19,6 +19,7 @@ gem 'therubyracer', :platform=>:ruby
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'puma'
+gem 'will_paginate', '~> 3.0'
 # Build JSON APIs with ease.
 gem 'active_model_serializers'
 gem 'validates'

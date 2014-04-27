@@ -20,6 +20,18 @@ ru:
         title: ЦОЕ (ценностно-ориентационное единство)
         quality: Личностное качество
         summary: Количество выборов
+      interview_statistic:
+        title: Результаты опроса - по участникам (клик по участнику раскроет данные)
+        completed: Закончили опрос
+        incompleted: Еще не ответили на вопросы опроса
+        attraction_users: Выборы по социометрии
+        referention_users: Выборы по референтометрии
+        personal_qualities: Личные качества
+      graphs:
+        title: Графики социометрии и референтометрии
+      metrics:
+        sociometry: Социометрия
+        referentometry: Референтометрия
   web:
     users:
       new:
