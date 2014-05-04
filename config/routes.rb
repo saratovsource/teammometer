@@ -18,12 +18,12 @@ TeamMometer::Application.routes.draw do
     root to: "welcome#index"
     get 'templates/*template', to: 'templates#show', as: :template
     resources :interviews, only: [:show]
-    resources :surveys
     resource  :session,    only: [:create, :destroy]
     resources :users,      only: [:new, :create] do
       member do
         get :confirm
       end
     end
+    get 'surveys(/:id)', to: 'surveys#index'
   end
 end

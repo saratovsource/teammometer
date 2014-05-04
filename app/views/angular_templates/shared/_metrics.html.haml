@@ -1,6 +1,6 @@
 .panel.panel-default
   .panel-heading= t(".#{name}")
-  .panel-body
+  .panel-body.overflowed
     %table.table.table-header-rotated
       %thead
         %tr
@@ -11,11 +11,11 @@
             %div
               %span {{ users_map[key].name }}
       %tbody
-        %tr.warning(ng-hide="show_details")
+        %tr.warning
           %td(colspan="100%")
-            %a(href='#' ng-click="show_details = !show_details")
-              %span.glyphicon.glyphicon-fullscreen
-        %tr(ng-repeat="(respondent_id, att_users) in #{name}" ng-class="{summary: 'info'}[respondent_id]" ng-show="show_it(respondent_id)")
+            %a(href='#' ng-click="#{collapse_id} = !#{collapse_id}")
+              %span.glyphicon.glyphicon-sort
+        %tr(ng-repeat="(respondent_id, att_users) in #{name}" ng-class="{summary: 'info'}[respondent_id]" ng-show="show_it(respondent_id, #{collapse_id})")
           %td {{ users_map[respondent_id].name }}
           %td.text-center(ng-repeat="rate in att_users")
             %span(ng-show="rate > 0") {{ rate }}

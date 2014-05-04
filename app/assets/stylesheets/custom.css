@@ -58,3 +58,6 @@
 th.actions {
   width: 150px;
 }
+.overflowed {
+  overflow: hidden;
+}
