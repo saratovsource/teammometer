@@ -8,7 +8,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.forward_agent = true
 
   config.vm.box = "parallels/ubuntu-12.04"
-  config.vm.synced_folder ".", "/vagrant", nfs: true
+  # config.vm.synced_folder ".", "/vagrant", nfs: true
+  config.vm.synced_folder ".", "/vagrant", type: 'rsync',
+    rsync__exclude: ".git/"
 
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "provisioning/site.yml"

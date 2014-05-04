@@ -14,5 +14,9 @@ angular.module('teammometer')
         @state = 'finished'
         @state_event = "finish"
         @save()
+      res.prototype.resume = () ->
+        @state = 'started'
+        @state_event = "resume"
+        @save()
       res
   ]
