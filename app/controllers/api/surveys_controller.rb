@@ -10,7 +10,7 @@ class Api::SurveysController < Api::ApplicationController
     @survey.interviewer = current_user
     @survey.assign_attributes(params[:survey])
     @survey.save
-    respond_with @survey, serializer: SurveySerializer
+    respond_with @survey, serializer: SurveySerializer, location: api_surveys_path
   end
 
   def show
@@ -23,7 +23,7 @@ class Api::SurveysController < Api::ApplicationController
     @survey.subscribe(MailNotificationsListener.new)
     @survey.assign_attributes(params[:survey])
     @survey.save
-    respond_with @survey, serializer: SurveySerializer
+    respond_with @survey, serializer: SurveySerializer, location: api_surveys_path
   end
 
   def destroy
