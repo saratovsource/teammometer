@@ -54,3 +54,7 @@
   text-align: left;
   // white-space: nowrap; /*whether to display in one line or not*/
 }
+
+th.actions {
+  width: 150px;
+}
