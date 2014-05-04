@@ -24,6 +24,10 @@ class Survey < ActiveRecord::Base
       transition started: :finished
     end
 
+    event :resume do
+      transition finished: :started
+    end
+
   end
   include ServeyRepository
 

@@ -19,6 +19,10 @@ FactoryGirl.define do
           i.association( :completed_interview ),
           i.association( :completed_interview )
         ]}
+
+        factory :active_survey do
+          state { :started }
+        end
       end
 
     end

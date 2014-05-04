@@ -8,6 +8,10 @@ FactoryGirl.define do
 
     factory :completed_interview do
       personal_quality_list { 10.times.map{ |i| i = generate(:string) } }
+
+      factory :active_interview_form do
+        survey { association :active_survey }
+      end
     end
   end
 end
