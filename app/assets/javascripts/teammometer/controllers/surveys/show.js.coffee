@@ -2,7 +2,7 @@ angular.module('teammometer')
   .controller 'SurveyCtrlShow', [
     '$scope', '$location', '$state', '$q', 'Survey', 'SurveyReport', '$stateParams',
     ($scope, $location, $state, $q, Survey, SurveyReport, $stateParams) ->
-      $scope.current_report_url = window.location
+      $scope.current_report_url = window.location.origin + $location.url()
       $scope.load_data = () ->
         Survey.get($stateParams.id).then \
         (survey) -> $scope.processSurvey(survey)
