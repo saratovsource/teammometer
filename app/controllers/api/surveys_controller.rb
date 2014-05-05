@@ -14,7 +14,7 @@ class Api::SurveysController < Api::ApplicationController
   end
 
   def show
-    @survey = current_user.surveys.find(params[:id])
+    @survey = Survey.find_by!(permalink: params[:id])
     respond_with @survey, serializer: SurveySerializer
   end
 

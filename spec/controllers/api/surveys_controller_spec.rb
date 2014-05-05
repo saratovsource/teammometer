@@ -20,6 +20,7 @@ describe Api::SurveysController do
       expect(survey).to be_present
       expect(survey.respondents).to be_present
       expect(survey.personal_quality_list).to be_present
+      expect(survey.permalink).to be_present
     end
   end
 
@@ -27,7 +28,7 @@ describe Api::SurveysController do
     let(:survey) { create :new_survey, interviewer: current_user }
     let(:ret_survey) { assigns(:survey) }
     it "returns existing survey" do
-      get :show, default_params.merge(id: survey)
+      get :show, default_params.merge(id: survey.permalink)
       expect(response).to be_success
       expect(ret_survey).to be_present
     end

@@ -16,7 +16,7 @@ angular.module('teammometer')
           templateUrl: $tRouterProvider.page("surveys/new")
           controller: 'SurveysCtrlNew'
         .state 'surveys.show',
-          url: '/{id:[0-9]{1,8}}'
+          url: '/{id}'
           templateUrl: $tRouterProvider.page("surveys/show")
           controller: 'SurveyCtrlShow'
         .state 'surveys.edit',

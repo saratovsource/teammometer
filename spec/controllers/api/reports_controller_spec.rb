@@ -7,7 +7,7 @@ describe Api::ReportsController do
 
   describe ".show" do
     it "returns reports for survey" do
-      get :show, default_params.merge(survey_id: survey)
+      get :show, default_params.merge(survey_id: survey.id)
       expect( response ).to be_success
     end
   end

@@ -6,7 +6,6 @@ describe Web::SurveysController do
     it "shown user surveys" do
       get :index
       expect(response).to be_success
-      surveys = assigns(:collection)
     end
   end
 end
