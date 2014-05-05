@@ -7,6 +7,6 @@ class Api::ReportsController < Api::ApplicationController
   private
 
   def current_survey
-    @current_survey ||= current_user.surveys.find(params[:survey_id])
+    @current_survey ||= Survey.find(params[:survey_id])
   end
 end

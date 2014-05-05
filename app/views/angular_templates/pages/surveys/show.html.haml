@@ -1,3 +1,4 @@
 %h3 {{ survey.title }}
+= render "angular_templates/shared/share" if signed_in?
 = render "angular_templates/shared/interview_statistic"
 = render "angular_templates/shared/report"

@@ -6,6 +6,7 @@ class Survey < ActiveRecord::Base
   has_many    :respondents, dependent: :destroy
   has_many    :interview_forms
   acts_as_taggable_on :personal_qualities
+  before_create :generate_permalink
 
   accepts_nested_attributes_for :respondents, allow_destroy: true
 
@@ -35,6 +36,10 @@ class Survey < ActiveRecord::Base
 
   def start_the_survey
     publish(:start_the_survey, self)
+  end
+
+  def generate_permalink
+    permalink = SecureRandom.urlsafe_base64(32)
   end
 
 end

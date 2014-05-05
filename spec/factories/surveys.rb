@@ -3,6 +3,7 @@
 FactoryGirl.define do
   factory :survey do
     title { generate :string }
+    permalink { generate :permalink }
     interviewer
 
     factory :new_survey, class: 'NewSurveyType' do

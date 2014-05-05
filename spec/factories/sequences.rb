@@ -15,6 +15,10 @@ FactoryGirl.define do
     SecureRandom.urlsafe_base64
   end
 
+  sequence :permalink do |n|
+    SecureRandom.urlsafe_base64(32)
+  end
+
   sequence :personal_quality do |n|
     {text: "quality-#{n}"}
   end

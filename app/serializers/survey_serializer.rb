@@ -1,7 +1,7 @@
 class SurveySerializer < ApplicationSerializer
   attributes :id, :title, :state, :created_at, :updated_at, :respondents, :personal_qualities
   attributes :attraction_question, :referention_question, :personal_qualities_question
-  attributes :interviews
+  attributes :interviews, :permalink
 
   def created_at
     I18n.l(object.created_at, format: :short)

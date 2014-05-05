@@ -1,6 +1,6 @@
 class NewSurveyType < Survey
   include ApplicationType
-  permit  :title, :state_event,
+  permit  :title, :state_event, :permalink,
           :attraction_question, :referention_question, :personal_qualities_question,
           respondents_attributes: [:id, :name, :email, :_destroy]
 
