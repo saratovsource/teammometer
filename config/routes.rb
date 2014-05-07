@@ -11,6 +11,7 @@ TeamMometer::Application.routes.draw do
     resources :surveys do
       resource :report, only: [:show]
     end
+    resources :templates
   end
 
   # Web
