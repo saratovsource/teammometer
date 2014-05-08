@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :surveys, inverse_of: :interviewer, foreign_key: "interviewer_id"
+  has_many :survey_templates, class_name: "Survey::Template", inverse_of: :user
   validates :email, presence: true, uniqueness: true, email: true
   has_secure_password
 

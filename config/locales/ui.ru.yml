@@ -16,6 +16,19 @@ ru:
           title: Редактирование опроса
         new:
           title: Новый опрос
+        template:
+          add: "Добавить опрос"
+          default: "Страндартный"
+          new_template: "... новый шаблон"
+      templates:
+        form:
+          tags: "Добавьте личностные качества"
+        index:
+          title: Шаблоны опросов
+        new:
+          title: Новый опрос
+        edit:
+          title: Редактирование шаблона
     shared:
       coe:
         coe: ЦОЕ

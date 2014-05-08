@@ -1,9 +1,6 @@
-class NewSurveyType < Survey
+class SurveyTemplateType < Survey::Template
   include ApplicationType
-  attr_accessor :active_template
-  permit  :title, :state_event, :permalink,
-          :attraction_question, :referention_question, :personal_qualities_question,
-          respondents_attributes: [:id, :name, :email, :_destroy]
+  permit :title, :attraction_question, :referention_question, :personal_qualities_question
 
   def assign_attributes(values = {})
     super(values)

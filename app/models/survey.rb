@@ -39,7 +39,7 @@ class Survey < ActiveRecord::Base
   end
 
   def generate_permalink
-    permalink = SecureRandom.urlsafe_base64(32)
+    self.permalink = SecureRandom.urlsafe_base64(32)
   end
 
 end

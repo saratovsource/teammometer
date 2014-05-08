@@ -18,5 +18,10 @@ angular.module('teammometer')
         @state = 'started'
         @state_event = "resume"
         @save()
+      res.prototype.apply_template = (template) ->
+        @attractionQuestion = template.attractionQuestion
+        @personalQualities = template.personalQualities
+        @personalQualitiesQuestion = template.personalQualitiesQuestion
+        @referentionQuestion = template.referentionQuestion
       res
   ]

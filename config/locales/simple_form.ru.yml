@@ -5,6 +5,9 @@ ru:
       survey:
         create: "Сохранить"
         update: "Сохранить"
+      survey/template:
+        create: "Сохранить"
+        update: "Сохранить"
       user:
         create: "Зарегистрироваться"
       session_type:
@@ -17,6 +20,8 @@ ru:
       mark: '*'
     labels:
       survey:
+        title: Название
+      survey/template:
         title: Название
       respondent:
         name: ФИО

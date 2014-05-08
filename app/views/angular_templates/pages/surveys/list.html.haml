@@ -1,8 +1,8 @@
+.row
+  .col-xs-12= render "angular_templates/pages/surveys/template"
 %table.table.table-striped
   %thead
-    %th
-      %a.btn.btn-default(ui-sref="surveys.new")
-        %span.glyphicon.glyphicon-plus
+    %th #
     %th= Survey.human_attribute_name(:title)
     %th= Survey.human_attribute_name(:updated_at)
     %th= Survey.human_attribute_name(:created_at)
@@ -18,7 +18,7 @@
       %td {{ survey.createdAt }}
       %td
         .btn-group
-          %a.btn.btn-default(ui-sref="surveys.edit({id:survey.id})" ng-show="survey.state == 'initial'")
+          %a.btn.btn-default(ui-sref="surveys.edit({id:survey.permalink})" ng-show="survey.state == 'initial'")
             %span.glyphicon.glyphicon-pencil
           %button.btn.btn-default(ng-click="survey.start()" ng-show="survey.state == 'initial'")
             %span.glyphicon.glyphicon-play-circle

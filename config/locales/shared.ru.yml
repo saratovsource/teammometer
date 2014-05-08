@@ -3,6 +3,8 @@ ru:
   shared:
     sidebar:
       title: Сайдбар
+      surveys: Опросы
+      templates: Шаблоны опросов
     top_menu:
       user:
         realy: Вы уже уходите?
