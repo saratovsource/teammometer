@@ -1,8 +1,8 @@
+.row
+  .col-xs-12= render "angular_templates/pages/surveys/template"
 %table.table.table-striped
   %thead
-    %th
-      %a.btn.btn-default(ui-sref="surveys.new")
-        %span.glyphicon.glyphicon-plus
+    %th #
     %th= Survey.human_attribute_name(:title)
     %th= Survey.human_attribute_name(:updated_at)
     %th= Survey.human_attribute_name(:created_at)

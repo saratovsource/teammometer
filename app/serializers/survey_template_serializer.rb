@@ -3,11 +3,11 @@ class SurveyTemplateSerializer < ApplicationSerializer
   attributes :attraction_question, :referention_question, :personal_qualities_question
 
   def created_at
-    I18n.l(object.created_at, format: :short)
+    I18n.l(object.created_at || Time.now, format: :short)
   end
 
   def updated_at
-    I18n.l(object.updated_at, format: :short)
+    I18n.l(object.updated_at || Time.now, format: :short)
   end
 
   def personal_qualities

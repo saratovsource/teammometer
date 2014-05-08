@@ -1,0 +1,23 @@
+.btn-group
+  %button.btn.btn-default.dropdown-toggle(type="button" data-toggle="dropdown")
+    = t('.add')
+    %span.caret
+  %ul.dropdown-menu(role="menu")
+    %li
+      %a(ui-sref="surveys.new({template: 'default'})")
+        %span.glyphicon.glyphicon-plus
+        &nbsp;
+        = t('.default')
+    %li.divider
+      - current_user.survey_templates.each do |tmp|
+        %li
+          %a(ui-sref="surveys.new({template: '#{tmp.id}'})")
+            %span.glyphicon.glyphicon-th-list
+            &nbsp;
+            #{tmp.title}
+    %li.divider
+    %li
+      %a(ui-sref="templates.new")
+        %span.glyphicon.glyphicon-file
+        &nbsp;
+        = t('.new_template')

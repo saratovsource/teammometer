@@ -13,7 +13,7 @@ class Api::TemplatesController < Api::ApplicationController
   end
 
   def show
-    @survey_template = current_user.survey_templates.find(params[:id])
+    @survey_template = current_user.survey_templates.find(params[:id]) rescue Survey::Template.default
     respond_with @survey_template, serializer: SurveyTemplateSerializer, root: false
   end
 

@@ -16,6 +16,10 @@ ru:
           title: Редактирование опроса
         new:
           title: Новый опрос
+        template:
+          add: "Добавить опрос"
+          default: "Страндартный"
+          new_template: "... новый шаблон"
       templates:
         form:
           tags: "Добавьте личностные качества"
