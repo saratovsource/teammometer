@@ -4,5 +4,6 @@ module ServeyRepository
 
   included do
     scope :web, -> {with_states([:enabled])}
+    scope :ordered, -> { order(created_at: :desc) }
   end
 end

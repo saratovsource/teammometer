@@ -1,7 +1,7 @@
 class Api::SurveysController < Api::ApplicationController
 
   def index
-    @collection = current_user.surveys.paginate(paginate_params)
+    @collection = current_user.surveys.ordered.paginate(paginate_params)
     respond_with @collection
   end
 

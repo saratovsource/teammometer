@@ -1,0 +1,17 @@
+%table.table.table-striped
+  %thead
+    %th
+      %a.btn.btn-default(ui-sref="templates.new")
+        %span.glyphicon.glyphicon-plus
+    %th= Survey::Template.human_attribute_name(:title)
+    %th.actions
+  %tbody
+    %tr(ng-repeat="template in templates")
+      %td {{ $index + 1 }}
+      %td {{ template.title }}
+      %td
+        .btn-group
+          %a.btn.btn-default(ui-sref="templates.edit(template)")
+            %span.glyphicon.glyphicon-pencil
+          %button.btn.btn-danger(ng-click="delete(template)")
+            %span.glyphicon.glyphicon-trash

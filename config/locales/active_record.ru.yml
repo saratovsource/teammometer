@@ -9,6 +9,11 @@ ru:
         title: Наименование
         created_at: Дата создания
         updated_at: Дата изменения
+      survey/template:
+        attraction_question: "Другой вопрос для аттракции"
+        referention_question: "Другой вопрос для референтометрии"
+        personal_qualities_question: "Другой вопрос для ЦОЕ"
+        title: Наименование
       respondent:
         name: ФИО
         email: Email
@@ -28,3 +33,6 @@ ru:
       survey:
         one: Опрос
         other: Опросы
+      survey/template:
+        one: Шаблон
+        other: Шаблоны

@@ -18,7 +18,7 @@
       %td {{ survey.createdAt }}
       %td
         .btn-group
-          %a.btn.btn-default(ui-sref="surveys.edit({id:survey.id})" ng-show="survey.state == 'initial'")
+          %a.btn.btn-default(ui-sref="surveys.edit({id:survey.permalink})" ng-show="survey.state == 'initial'")
             %span.glyphicon.glyphicon-pencil
           %button.btn.btn-default(ng-click="survey.start()" ng-show="survey.state == 'initial'")
             %span.glyphicon.glyphicon-play-circle

@@ -25,6 +25,6 @@ TeamMometer::Application.routes.draw do
         get :confirm
       end
     end
-    get 'surveys(/:id)', to: 'surveys#index'
+    get '*path', to: 'angular_appilcation#index'
   end
 end

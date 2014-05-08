@@ -2,7 +2,7 @@ class Api::TemplatesController < Api::ApplicationController
 
   def index
     @collection = current_user.survey_templates.paginate(paginate_params)
-    respond_with @collection
+    respond_with @collection, each_serializer: SurveyTemplateSerializer, root: false
   end
 
   def create
@@ -14,7 +14,7 @@ class Api::TemplatesController < Api::ApplicationController
 
   def show
     @survey_template = current_user.survey_templates.find(params[:id])
-    respond_with @survey_template
+    respond_with @survey_template, serializer: SurveyTemplateSerializer, root: false
   end
 
   def update
