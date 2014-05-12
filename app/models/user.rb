@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :survey_templates, class_name: "Survey::Template", inverse_of: :user
   validates :email, presence: true, uniqueness: true, email: true
   has_secure_password
+  include Authority::UserAbilities
 
   state_machine initial: :disabled do
     state :enabled

@@ -1,5 +1,6 @@
 class Survey < ActiveRecord::Base
   include Wisper::Publisher
+  include Authority::Abilities
 
   validates   :title, presence: true
   belongs_to  :interviewer, class_name: "User"

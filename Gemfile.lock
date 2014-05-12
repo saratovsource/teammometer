@@ -35,6 +35,9 @@ GEM
       activesupport (>= 3, < 5)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
+    authority (3.0.0)
+      activesupport (>= 3.0.0)
+      rake (>= 0.8.7)
     awesome_print (1.2.0)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -326,6 +329,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   acts-as-taggable-on
+  authority
   bcrypt-ruby
   better_errors
   binding_of_caller
