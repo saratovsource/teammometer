@@ -32,7 +32,6 @@ angular.module('teammometer')
         template.from_survey($scope.survey)
         template.save().then \
         (result) ->
-          console.debug result
           $state.go('templates.edit', {id: result.id})
 
       $scope.load_data()
