@@ -3,6 +3,7 @@ angular.module('teammometer')
     '$scope', '$location', '$state', '$q', 'Survey', 'SurveyReport', 'SurveyTemplate', '$stateParams',
     ($scope, $location, $state, $q, Survey, SurveyReport, SurveyTemplate, $stateParams) ->
       $scope.current_report_url = window.location.origin + $location.url()
+      $scope.loaded = false
       $scope.load_data = () ->
         Survey.get($stateParams.id).then \
         (survey) -> $scope.processSurvey(survey)
@@ -16,6 +17,7 @@ angular.module('teammometer')
         $scope.getReport(survey)
 
       $scope.processReport = (report) ->
+        $scope.loaded = true
         $scope.report = report
         $scope.users_map = {}
         for resp in report.respondents

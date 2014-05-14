@@ -28,9 +28,9 @@ class SurveyReport < Survey
   def coe_percent(arr = [])
     return 0 if arr.empty?
     arr.sort!
-    n = arr[-5, 5].sum
-    m = arr[0, 5].sum
-    sum = arr.sum
+    n = ( arr[-5, 5] || Array(0) ).sum
+    m = ( arr[0, 5] || Array(0) ).sum
+    sum = arr.sum || 0
     return 0 if sum.zero?
     100 * ( n-m ) / arr.sum
   end

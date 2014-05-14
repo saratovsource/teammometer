@@ -3,5 +3,5 @@
 .report(ng-show="report.respondents")
   = render "angular_templates/shared/interview_statistic"
   = render "angular_templates/shared/report"
-.report_empty(ng-hide="report.respondents")
+.report_empty(ng-hide="report.respondents || !loaded")
   .alert.alert-danger= t('.empty_report')
