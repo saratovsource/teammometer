@@ -47,6 +47,8 @@ ru:
       metrics:
         sociometry: Социометрия
         referentometry: Референтометрия
+      share:
+        template: Создать шаблон из опроса
   web:
     users:
       new:

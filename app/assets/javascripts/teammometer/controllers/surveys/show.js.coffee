@@ -1,7 +1,7 @@
 angular.module('teammometer')
   .controller 'SurveyCtrlShow', [
-    '$scope', '$location', '$state', '$q', 'Survey', 'SurveyReport', '$stateParams',
-    ($scope, $location, $state, $q, Survey, SurveyReport, $stateParams) ->
+    '$scope', '$location', '$state', '$q', 'Survey', 'SurveyReport', 'SurveyTemplate', '$stateParams',
+    ($scope, $location, $state, $q, Survey, SurveyReport, SurveyTemplate, $stateParams) ->
       $scope.current_report_url = window.location.origin + $location.url()
       $scope.load_data = () ->
         Survey.get($stateParams.id).then \
@@ -26,6 +26,14 @@ angular.module('teammometer')
 
       $scope.show_it = (header, show_dets) ->
         header == 'summary' || show_dets
+
+      $scope.create_template = ->
+        template = new SurveyTemplate()
+        template.from_survey($scope.survey)
+        template.save().then \
+        (result) ->
+          console.debug result
+          $state.go('templates.edit', {id: result.id})
 
       $scope.load_data()
   ]

@@ -1,5 +1,9 @@
-.panel
-  .input-group
-    .input-group-addon
-      %span.glyphicon.glyphicon-share
-    %input.form-control(type="text" ng-model="current_report_url")
+.panel.row
+  .col-xs-11
+    .input-group
+      .input-group-addon
+        %span.glyphicon.glyphicon-share
+      %input.form-control(type="text" ng-model="current_report_url")
+  .col-xs-1
+    %button.btn.btn-default(title="#{t('.template')}" ng-click='create_template()')
+      %span.glyphicon.glyphicon-file
