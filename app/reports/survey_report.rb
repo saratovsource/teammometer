@@ -30,6 +30,8 @@ class SurveyReport < Survey
     arr.sort!
     n = arr[-5, 5].sum
     m = arr[0, 5].sum
+    sum = arr.sum
+    return 0 if sum.zero?
     100 * ( n-m ) / arr.sum
   end
 
