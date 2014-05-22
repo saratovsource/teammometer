@@ -18,8 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # for vagrant-exec plugin
-  config.exec.root = "/vagrant"
-  config.exec.prepend_with "bundle exec", only: %w(rake rspec guard rails unicorn)
+  config.exec.commands %w(rake rspec guard rails unicorn), prepend: "bundle exec", directory: "/vagrant"
 
   # vagrant hostmanager
   config.hostmanager.enabled = true
