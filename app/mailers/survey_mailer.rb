@@ -3,6 +3,6 @@ class SurveyMailer < ApplicationMailer
     @user = interview_form.respondent
     @survey = interview_form.survey
     @interview = interview_form
-    mail(to: @user.email)
+    mail(to: @user.email, subject: @survey.title)
   end
 end
