@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.1'
+#ruby '2.1.1'
 gem 'pg'
 gem 'rails', '4.1.0'
 gem 'rails-observers'
@@ -27,7 +27,7 @@ gem 'validates'
 gem 'bcrypt-ruby'
 gem 'mail_view'
 gem 'wisper'
-gem "bower-rails", "~> 0.7.1"
+gem "bower-rails", "~> 0.7.3"
 gem 'acts-as-taggable-on'
 group :development do
   gem 'better_errors'
@@ -46,7 +46,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'ffaker'
-  gem 'jazz_hands'
+  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+  gem 'pry-byebug'   # This may or may not work with 2.1.2 either, so remove if you still get errorrs
 end
 group :test do
   gem 'capybara'

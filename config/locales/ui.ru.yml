@@ -51,6 +51,8 @@ ru:
         referentometry: Референтометрия
       share:
         template: Создать шаблон из опроса
+  ui_helpers:
+    choose_from: Сделайте выбор
   web:
     users:
       new:

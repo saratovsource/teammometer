@@ -1,0 +1,16 @@
+commands:
+  bundle: &base
+    directory: "/team_mometer"
+    image: team
+    args: "--rm -it -v /team_mometer:/team_mometer --volumes-from bundles"
+  rails: &rails_development
+    <<: *base
+    prepend: bundle exec
+    args: "--rm -it -v /team_mometer:/team_mometer --link postgresql:pg --volumes-from bundles"
+  rake:
+    <<: *rails_development
+  cucumber:
+    <<: *rails_development
+  guard:
+    <<: *rails_development
+    args: "--rm -it -v /team_mometer:/team_mometer -p 8080:8080 --link postgresql:pg --volumes-from bundles"
