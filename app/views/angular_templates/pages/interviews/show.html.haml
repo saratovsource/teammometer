@@ -3,6 +3,6 @@
   - %w{attraction referentometry coe}.each do |name|
     .panel.panel-default= render "angular_templates/pages/interviews/#{name}"
   .text-center
-    %button.btn.btn-primary.btn-lg(ng-click="save()" ng-show="valid()") Send
+    %button.btn.btn-primary.btn-lg(ng-click="save()" ng-show="valid()")= t('.send')
 .container(ng-show="finish")
   %h1= t('.title')
