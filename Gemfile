@@ -27,7 +27,6 @@ gem 'validates'
 gem 'bcrypt-ruby'
 gem 'mail_view'
 gem 'wisper'
-gem "bower-rails", "~> 0.7.3"
 gem 'acts-as-taggable-on'
 group :development do
   gem 'better_errors'
@@ -41,6 +40,7 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
+  gem "bower-rails", "~> 0.7.3"
 end
 group :development, :test do
   gem 'factory_girl_rails'
