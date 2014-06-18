@@ -28,6 +28,7 @@ gem 'bcrypt-ruby'
 gem 'mail_view'
 gem 'wisper'
 gem 'acts-as-taggable-on'
+gem "bower-rails", "~> 0.7.3"
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :mri_21, :rbx]
@@ -40,7 +41,6 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
-  gem "bower-rails", "~> 0.7.3"
 end
 group :development, :test do
   gem 'factory_girl_rails'
