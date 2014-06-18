@@ -6,7 +6,7 @@
     .col-xs-12= f.input :personal_qualities_question, as: :text, input_html: {"ng-model" => "survey.personalQualitiesQuestion"}
     .form-group.string.optional.survey_respondents_name.col-xs-12
       %tags-input(ng-model="survey.personalQualities" add-on-comma="false" replace-spaces-with-dashes="false" placeholder="#{t('.tags')}")
-        %auto-complete(source="query($query)")
+        %auto-complete(source="query($query)" min-length="1")
   .respondents(ng-repeat="respondent in survey.respondents")
     = f.simple_fields_for :respondents, Respondent.new do |ff|
       .respondent.row(ng-hide="respondent._destroy")

@@ -2,18 +2,18 @@
   %p {{ survey.referentionQuestion }}
 .panel-body.row
   .col-md-6
-    .alert.alert-info(ng-hide="referention_users.length > 0") Chose elements from ->
     %ul.list-group
-      %li.list-group-item(ng-repeat="user in referention_users")
-        %span.label.label-default {{ $index + 1 }}
-        &nbsp;
-        {{ user.name }}
-        %button.btn.btn-default.pull-right(ng-click="team_utils.remove_from(user, referention_users)")
+      %li.list-group-item(ng-repeat="respondent in respondents" ng-hide="referented(respondent) || respondent.id == current_respondent.id")
+        {{ respondent.name }}
+        %button.btn.btn-default.pull-right(ng-click="team_utils.add_to(respondent, referention_users)" ng-show="referention_users.length <= max_users - 1")
           %span.glyphicon.glyphicon-chevron-right
         .clearfix
   .col-md-6
+    .alert.alert-info(ng-hide="referention_users.length > 0")= t(:choose_from, scope: [:ui_helpers])
     %ul.list-group
-      %li.list-group-item(ng-repeat="respondent in respondents" ng-hide="referented(respondent) || respondent.id == current_respondent.id")
-        %button.btn.btn-default(ng-click="team_utils.add_to(respondent, referention_users)" ng-show="referention_users.length <= max_users - 1")
+      %li.list-group-item(ng-repeat="user in referention_users")
+        %span.label.label-default {{ $index + 1 }}
+        %button.btn.btn-default(ng-click="team_utils.remove_from(user, referention_users)")
           %span.glyphicon.glyphicon-chevron-left
-        {{ respondent.name }}
+        &nbsp;
+        {{ user.name }}

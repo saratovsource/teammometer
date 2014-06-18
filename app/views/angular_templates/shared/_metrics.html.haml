@@ -6,7 +6,7 @@
         %tr
           %th.rotate-45
             %div
-              %span User
+              %span= t(".user")
           %th.rotate-45(ng-repeat="(key, value) in #{name}" ng-hide="key == 'summary'")
             %div
               %span {{ users_map[key].name }}
