@@ -1,7 +1,8 @@
 # A sample Bowerfile
 # Check out https://github.com/42dev/bower-rails#ruby-dsl-configuration for more options
+asset 'angular'
 asset 'angularjs-rails-resource'
 asset 'angular-ui-router'
 asset 'angular-resource'
-asset 'ng-tags-input', '2.0.1'
+asset 'ng-tags-input'
 asset 'angular-google-chart'
