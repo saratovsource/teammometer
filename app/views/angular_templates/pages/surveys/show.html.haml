@@ -3,5 +3,7 @@
 .report(ng-show="report.respondents")
   = render "angular_templates/shared/interview_statistic"
   = render "angular_templates/shared/report"
+.loading(ng-show="!loaded")
+  = render "angular_templates/shared/loader", message: t('.processing')
 .report_empty(ng-hide="report.respondents || !loaded")
   .alert.alert-danger= t('.empty_report')

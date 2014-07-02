@@ -8,9 +8,9 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.x'
 gem 'jquery-rails'
-gem 'jbuilder', '~> 1.2'
-gem 'bootstrap-sass', '~> 3.1.1.0'
-gem "bootstrap_flash_messages", "~> 1.0.0"
+#gem 'jbuilder', '~> 1.2'
+gem 'bootstrap-sass'#, '~> 3.1.1.0'
+gem "bootstrap_flash_messages"#, "~> 1.0.0"
 gem 'figaro'
 gem 'haml-rails'
 gem 'state_machine'
@@ -28,7 +28,7 @@ gem 'bcrypt-ruby'
 gem 'mail_view'
 gem 'wisper'
 gem 'acts-as-taggable-on'
-gem "bower-rails", "~> 0.7.3"
+gem "bower-rails"#, "~> 0.7.3"
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :mri_21, :rbx]

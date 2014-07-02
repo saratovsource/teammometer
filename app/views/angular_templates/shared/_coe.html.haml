@@ -12,16 +12,16 @@
           %th.rotate-45
             %div
               %span= t('.quality')
+          %th.rotate-45
+            %div.bg-info
+              %span= t('.summary')
           %th.rotate-45(ng-repeat="(key, value) in users_map")
             %div
               %span {{ value.name }}
-          %th.rotate-45
-            %div.info
-              %span= t('.summary')
       %tbody
         %tr(ng-repeat="(key, coe_v) in report.coe.items")
           %td {{ coe_v.name }}
-          %td.text-center(ng-repeat="(user_id, user) in users_map")
-            %span(ng-show="coe_v.positions[user_id] > 0") {{ coe_v.positions[user_id] }}
           %td.info
             %span(ng-show="coe_v.count > 0") {{ coe_v.count }}
+          %td.text-center(ng-repeat="(user_id, user) in users_map")
+            %span(ng-show="coe_v.positions[user_id] > 0") {{ coe_v.positions[user_id] }}

@@ -5,7 +5,7 @@
       %thead
         %tr
           %th.rotate-45
-            %div
+            %div.bg-info
               %span= t(".user")
           %th.rotate-45(ng-repeat="(key, value) in #{name}" ng-hide="key == 'summary'")
             %div
@@ -16,6 +16,6 @@
             %a(href='#' ng-click="#{collapse_id} = !#{collapse_id}")
               %span.glyphicon.glyphicon-sort
         %tr(ng-repeat="(respondent_id, att_users) in #{name}" ng-class="{summary: 'info'}[respondent_id]" ng-show="show_it(respondent_id, #{collapse_id})")
-          %td {{ users_map[respondent_id].name }}
+          %td.info {{ users_map[respondent_id].name }}
           %td.text-center(ng-repeat="rate in att_users")
             %span(ng-show="rate > 0") {{ rate }}
