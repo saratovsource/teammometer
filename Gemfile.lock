@@ -325,7 +325,7 @@ DEPENDENCIES
   bcrypt-ruby
   better_errors
   binding_of_caller
-  bootstrap-sass (~> 3.2.0)
+  bootstrap-sass (~> 3.2.0.0)
   bootstrap_flash_messages
   bower-rails
   capybara
