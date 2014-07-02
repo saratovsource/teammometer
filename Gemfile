@@ -9,7 +9,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.x'
 gem 'jquery-rails'
 #gem 'jbuilder', '~> 1.2'
-gem 'bootstrap-sass'#, '~> 3.1.1.0'
+gem 'bootstrap-sass', '~> 3.2.0'
 gem "bootstrap_flash_messages"#, "~> 1.0.0"
 gem 'figaro'
 gem 'haml-rails'
@@ -44,7 +44,7 @@ group :development do
 end
 group :development, :test do
   gem 'factory_girl_rails'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~>2.14'
   gem 'ffaker'
   gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
   gem 'pry-byebug'   # This may or may not work with 2.1.2 either, so remove if you still get errorrs
