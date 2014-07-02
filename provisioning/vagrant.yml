@@ -1,0 +1,9 @@
+---
+- name: data_hub - Rails
+  hosts: all
+
+  vars_files:
+    - vars/development/vagrant.yml
+
+  roles:
+    - data_hub

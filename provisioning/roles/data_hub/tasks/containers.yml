@@ -1,0 +1,43 @@
+---
+- name: List existing containers
+  shell: "docker ps -a | awk '{print ( $(NF) )}' | cat"
+  register: container_exist
+
+- name: List existing images
+  shell: "docker images | awk '{print $1}' | cat"
+  register: image_exist
+
+- shell: "date | md5sum | awk '{print $1}'"
+  register: postgresql_password
+  when: (container_exist.stdout.find('postgresql') == -1)
+
+- name: Bundles container
+  command: >
+    docker run
+    -name bundles
+    -v /.bundles
+    busybox /bin/true
+  when: (container_exist.stdout.find('bundles') == -1)
+
+- name: Postgresql data container
+  command: >
+    docker run
+    -name psql_data
+    -v /data
+    busybox /bin/true
+  when: (container_exist.stdout.find('psql_data') == -1)
+
+- name: Run Rostgresql with linked data
+  command: >
+    docker run -d
+    -name postgresql
+    -p 127.0.0.1:5432:5432
+    -e USER=postgresql
+    -e PASS={{postgresql_password.stdout}}
+    --volumes-from psql_data
+    paintedfox/postgresql
+  when: (container_exist.stdout.find('postgresql') == -1)
+
+- name: Build working image
+  shell: "docker build -t {{working_image}} {{project_path}}/provisioning/vars/{{env_mode}}/"
+  when: (image_exist.stdout.find(working_image) == -1)

@@ -1,7 +1,0 @@
----
-- name: install imagening packages
-  apt: pkg={{ item }} state=installed update_cache=yes cache_valid_time=3600
-  sudo: true
-  with_items:
-    - imagemagick
-    - libmagickwand-dev
